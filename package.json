@@ -1,0 +1,41 @@
+{
+  "name": "le-sporting",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-email/components": "^0.0.20",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "date-fns": "^3.3.0",
+    "embla-carousel-react": "^8.6.0",
+    "google-auth-library": "^10.5.0",
+    "google-spreadsheet": "^5.0.2",
+    "googleapis": "^129.0.0",
+    "lucide-react": "^0.344.0",
+    "next": "^14.2.0",
+    "postcss": "^8.4.0",
+    "react": "^18.3.0",
+    "react-day-picker": "^8.10.0",
+    "react-dom": "^18.3.0",
+    "react-email": "^2.0.0",
+    "resend": "^3.2.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.4.0",
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0"
+  }
+}

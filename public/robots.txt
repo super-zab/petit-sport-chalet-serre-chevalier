@@ -1,0 +1,27 @@
+# robots.txt pour Le Petit Sport Chalet
+# Optimisé pour le SEO et l'indexation
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://le-sporting.fr/sitemap.xml
+
+# Optimisation pour les bots de recherche
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Bloquer les bots indésirables
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
