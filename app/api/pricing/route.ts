@@ -4,6 +4,9 @@ import { getApartmentBySlug } from "@/lib/apartments";
 import { getGoogleCredentials } from "@/lib/google-credentials";
 import { z } from "zod";
 
+// ADD THIS LINE RIGHT HERE:
+export const dynamic = "force-dynamic";
+
 const pricingSchema = z.object({
   apartmentSlug: z.string(),
   startDate: z.string(),
