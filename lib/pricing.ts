@@ -242,11 +242,20 @@ export async function calculatePrice(
   let totalPrice = 0;
   let matchedCount = 0;
 
+  // FIX: Force la date à midi pour éviter les décalages de fuseau horaire UTC sur Vercel
+  const safeStartDate = new Date(startDate);
+  safeStartDate.setHours(12, 0, 0, 0);
+
   // Pour chaque nuit
   for (let i = 0; i < nights; i++) {
-    const currentDate = new Date(startDate);
+    const currentDate = new Date(safeStartDate);
     currentDate.setDate(currentDate.getDate() + i);
-    const dateStr = currentDate.toISOString().split("T")[0]; // YYYY-MM-DD
+    
+    // FIX: Extraire la date localement au lieu d'utiliser .toISOString()
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+    const day = String(currentDate.getDate()).padStart(2, '0');
+    const dateStr = `${year}-${month}-${day}`; 
 
     // Chercher une règle qui correspond exactement (date + slug)
     let priceForNight = defaultPrice;
@@ -301,11 +310,18 @@ export async function getPricesForRange(
   }
 
   const result: Record<string, number> = {};
+  
+  // FIX: L'ajout de T12:00:00 protège contre les décalages UTC de Vercel
   const start = new Date(dateMin + "T12:00:00");
   const end = new Date(dateMax + "T12:00:00");
 
   for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
-    const dateStr = d.toISOString().slice(0, 10);
+    // FIX: Extraire la date localement au lieu d'utiliser .toISOString()
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const dateStr = `${year}-${month}-${day}`; 
+    
     result[dateStr] = byDate.get(dateStr) ?? defaultPrice;
   }
   return result;
