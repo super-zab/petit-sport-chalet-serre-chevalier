@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { DayPicker } from "react-day-picker";
-import type { DayContentProps } from "react-day-picker";
+import type { DateRange, DayContentProps } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import "@/app/day-picker.css";
 import { format } from "date-fns";
@@ -97,10 +97,10 @@ export function BookingCalendar({ onDateSelect, calendarId, apartmentSlug }: Boo
     return isDateOccupied(date);
   };
 
-  const handleSelect = (range: { from: Date | undefined; to: Date | undefined } | undefined) => {
+  const handleSelect = (range: DateRange | undefined) => {
     if (range) {
-      setRange(range);
-      onDateSelect(range.from || null, range.to || null);
+      setRange({ from: range.from, to: range.to });
+      onDateSelect(range.from ?? null, range.to ?? null);
     }
   };
 

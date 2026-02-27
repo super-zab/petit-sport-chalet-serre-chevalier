@@ -8,7 +8,7 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-4 heading-uppercase tracking-widest">Le Petit Sport Chalet</h3>
             <p className="text-chalet-cream-light">
-              Location saisonnière d'appartements et chalets à Serre Chevalier.
+              Location saisonnière d&apos;appartements et chalets à Serre Chevalier.
               Vos vacances à la montagne vous attendent.
             </p>
           </div>

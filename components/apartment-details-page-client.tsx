@@ -142,8 +142,8 @@ export function ApartmentDetailsPageClient({ apartment }: ApartmentDetailsPageCl
             apartmentSlug={apartment.slug}
             apartmentName={apartment.name}
             calendarId={apartment.calendarId}
-            startDate={startDate}
-            endDate={endDate}
+            startDate={startDate.toISOString()}
+            endDate={endDate.toISOString()}
             totalPrice={pricing?.totalPrice ?? null}
             onSuccess={handleSuccess}
           />

@@ -47,9 +47,12 @@ export function ApartmentDetailsClient({ apartment }: ApartmentDetailsClientProp
         <div className="mt-6 pt-6 border-t">
           <BookingForm
             apartmentId={apartment.id}
+            apartmentSlug={apartment.slug}
             apartmentName={apartment.name}
-            startDate={startDate}
-            endDate={endDate}
+            calendarId={apartment.calendarId}
+            startDate={startDate.toISOString()}
+            endDate={endDate.toISOString()}
+            totalPrice={null}
             onSuccess={handleSuccess}
           />
         </div>

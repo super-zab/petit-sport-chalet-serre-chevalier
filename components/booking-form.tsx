@@ -11,8 +11,8 @@ interface BookingFormProps {
   apartmentSlug: string;
   apartmentName: string;
   calendarId: string;
-  startDate: Date | null;
-  endDate: Date | null;
+  startDate: string;
+  endDate: string;
   totalPrice: number | null;
   onSuccess: () => void;
 }
@@ -59,8 +59,8 @@ export function BookingForm({
           apartmentSlug,
           apartmentName,
           calendarId,
-          startDate: startDate.toISOString(),
-          endDate: endDate.toISOString(),
+          startDate,
+          endDate,
           totalPrice: totalPrice ?? 0,
           ...formData,
         }),

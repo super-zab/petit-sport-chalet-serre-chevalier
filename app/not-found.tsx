@@ -10,10 +10,10 @@ export default function NotFound() {
           Appartement introuvable
         </h2>
         <p className="text-gray-600 mb-8">
-          L'appartement que vous recherchez n'existe pas.
+          L&apos;appartement que vous recherchez n&apos;existe pas.
         </p>
         <Link href="/">
-          <Button>Retour à l'accueil</Button>
+          <Button>Retour à l&apos;accueil</Button>
         </Link>
       </div>
     </div>
