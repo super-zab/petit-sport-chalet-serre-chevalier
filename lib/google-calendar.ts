@@ -130,7 +130,13 @@ export async function getOccupiedDays(
     for (const event of events) {
       const summary = (event.summary || "").trim();
       // Ne compter QUE les séjours validés ; ignorer [PROVISOIRE] et tout autre événement.
-      if (!summary.startsWith("[Sejour validé")) {
+      // Normalisation : suppression des accents + mise en minuscules pour gérer toutes les
+      // variantes de saisie : "[Sejour validé]", "[Séjour Validé]", "[SEJOUR VALIDE]", etc.
+      const normalizedSummary = summary
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+      if (!normalizedSummary.startsWith("[sejour valid")) {
         continue;
       }
 
