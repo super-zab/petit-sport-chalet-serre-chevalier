@@ -60,13 +60,13 @@ export function BookingCalendar({ onDateSelect, calendarId, apartmentSlug }: Boo
       });
   }, [calendarId]);
 
-  // Charger les prix par jour pour le calendrier (2 mois autour d'aujourd'hui)
+  // Charger les prix par jour pour le calendrier (18 mois à partir d'aujourd'hui)
   useEffect(() => {
     if (!apartmentSlug) return;
     const start = new Date();
     start.setMonth(start.getMonth() - 1);
     const end = new Date();
-    end.setMonth(end.getMonth() + 3);
+    end.setMonth(end.getMonth() + 18);
     fetch("/api/pricing/calendar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
