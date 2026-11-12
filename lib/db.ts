@@ -151,7 +151,8 @@ const globalStore = globalThis as { __pscDb?: Promise<Db> };
 
 export function getDb(): Promise<Db> {
   if (!globalStore.__pscDb) {
-    const url = process.env.DATABASE_URL;
+    // DATABASE_URL en priorité ; POSTGRES_URL est le nom créé par certaines intégrations Vercel.
+    const url = process.env.DATABASE_URL || process.env.POSTGRES_URL;
     let created: Promise<Db>;
     if (url) {
       created = createPostgres(url);
