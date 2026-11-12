@@ -1,41 +1,41 @@
 {
   "name": "le-sporting",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
+    "vercel-build": "node scripts/migrate.mjs && next build",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "node scripts/migrate.mjs",
+    "test": "node --test \"tests/*.test.mjs\""
   },
   "dependencies": {
-    "@react-email/components": "^0.0.20",
-    "@types/node": "^20.11.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "autoprefixer": "^10.4.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "date-fns": "^3.3.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
-    "google-auth-library": "^10.5.0",
-    "google-spreadsheet": "^5.0.2",
-    "googleapis": "^129.0.0",
-    "lucide-react": "^0.344.0",
-    "next": "^14.2.0",
-    "postcss": "^8.4.0",
-    "react": "^18.3.0",
-    "react-day-picker": "^8.10.0",
-    "react-dom": "^18.3.0",
-    "react-email": "^2.0.0",
-    "resend": "^3.2.0",
-    "tailwind-merge": "^2.2.0",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5.4.0",
-    "zod": "^3.22.0"
+    "lucide-react": "^0.468.0",
+    "next": "^16.4.6",
+    "pg": "^8.23.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^2.6.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.0"
+    "@electric-sql/pglite": "^0.5.16",
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.0"
   }
 }

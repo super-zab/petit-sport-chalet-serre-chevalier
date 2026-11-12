@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { StructuredData } from "@/components/structured-data";
 import { getBaseUrl } from "@/lib/seo";
 
 const montserrat = Montserrat({ 
@@ -84,10 +81,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={montserrat.variable}>
       <body className="bg-chalet-cream text-chalet-brown antialiased">
-        <StructuredData type="home" />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
