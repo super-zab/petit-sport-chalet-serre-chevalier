@@ -6,7 +6,7 @@ Installation locale, mise en production, organisation du code et sécurité du s
 
 ### Prérequis
 
-- **Node.js 20.9 ou plus récent** (`node -v` pour vérifier). npm est fourni avec.
+- **Node.js 24** (`node -v` pour vérifier), la version utilisée en production sur Vercel. npm est fourni avec.
 - **Git.**
 - Rien d'autre : pas de Postgres, de Docker ni de compte Google à installer. Une base de données embarquée est créée automatiquement au premier lancement.
 
